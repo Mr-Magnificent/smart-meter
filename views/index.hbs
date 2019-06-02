@@ -16,11 +16,12 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#wm" id="rendeBtn">Washing Machine</a>
-                    <a class="dropdown-item" href="#mw" id="microPenis">Microwave</a>
-                    <a class="dropdown-item" href="#ec" id="elecDick">Electirc Ketle</a>
-                    <a class="dropdown-item" href="#ac" id="coolDildo">Air Conditioner</a>
-                    <a class="dropdown-item" href="#ht" id="hotDildo">Heater</a>
-                    <a class="dropdown-item" href="#is" id="burningHouse">Induction Stove</a>
+                    <a class="dropdown-item" href="#mw" id="rendeBtnn">Microwave</a>
+                    <a class="dropdown-item" href="#ec" id="rendeBtnnn">Electirc Ketle</a>
+                    <a class="dropdown-item" href="#ac" id="rendeBtnnnn">Air Conditioner</a>
+                    <a class="dropdown-item" href="#ht" id="rendeBtnnnnn">Heater</a>
+                    <a class="dropdown-item" href="#is" id="rendeBtnnnnnn">Induction Stove</a>
+                    <a class="dropdown-item" href="#overall" id="overAll">Overall</a>
                 </div>
             </li>
         </ul>
@@ -31,13 +32,13 @@
 
     <div class="container">
         <canvas id="myChart"></canvas>
-        <p id="condom" style="width:100%; text-align:center"></p>
+        <p id="condo" style="width:100%; text-align:center"></p>
     </div>
 
 
 <script>
 function float2dollar(value){
-    return "U$ "+(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    return "Rs "+(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
 function renderChart(data, labels) {
@@ -70,72 +71,81 @@ function renderChart(data, labels) {
 $("#rendeBtn").click(
     function () {
         console.log("function start");
-        data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
-        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        data = [20000, 14000, 12000, 15000, 18000, 19000, 22000, 12000, 11000, 15000, 14000, 16000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Washing Machine";
+        document.getElementById('condo').innerHTML="Washing Machine";
     }
 );
-$("#microPenis").click(
+$("#rendeBtnn").click(
     function () {
         console.log("function start");
-        data = [2000, 14000, 12000, 15000, 18000, 19000, 22000];
-        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "jan"];
+        data = [2000, 14000, 12000, 15000, 18000, 19000, 22000, 21000,20000,19000,17000,18000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Microwave";
+        document.getElementById('condo').innerHTML="Microwave";
     }
 );
-$("#hotDildo").click(
+$("#rendeBtnnnnn").click(
     function () {
         console.log("function start");
-        data = [20000, 1400, 12000, 15000, 18000, 19000, 22000];
-        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "feb", "saturday"];
+        data = [20000, 1400, 12000, 15000, 18000, 19000, 22000, 11000, 12000, 13000,14000, 12000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Heater";
+        document.getElementById('condo').innerHTML="Heater";
     }
 );
-$("#coolDildo").click(
+$("#rendeBtnnnn").click(
     function () {
         console.log("function start");
-        data = [20000, 14000, 1200, 15000, 18000, 19000, 22000];
-        labels =  ["sunday", "monday", "tuesday", "wednesday", "march", "friday", "saturday"];
+        data = [20000, 14000, 1200, 15000, 18000, 19000, 22000, 21000, 11000, 20000, 19000, 20000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Air Conditioner";
+        document.getElementById('condo').innerHTML="Air Conditioner";
     }
 );
-$("#burningHouse").click(
+$("#rendeBtnnnnnn").click(
     function () {
         console.log("function start");
-        data = [20000, 14000, 12000, 1500, 18000, 19000, 22000];
-        labels =  ["sunday", "monday", "tuesday", "april", "thursday", "friday", "saturday"];
+        data = [20000, 14000, 12000, 1500, 18000, 19000, 22000, 21000, 19000, 18000, 11000, 12000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Toaster";
+        document.getElementById('condom').innerHTML="Induction Stove";
     }
 );
-$("#elecDick").click(
+$("#rendeBtnnn").click(
     function () {
         console.log("function start");
-        data = [20000, 14000, 12000, 15000, 1800, 19000, 22000];
-        labels =  ["sunday", "monday", "may", "wednesday", "thursday", "friday", "saturday"];
+        data = [20000, 14000, 12000, 15000, 1800, 19000, 22000, 17000, 16000,11000,20000,14000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Electric Kettle";
+        document.getElementById('condo').innerHTML="Electric Kettle";
     }
 );
 $("#Acpd").click(
     function () {
         console.log("function start");
-        data = [2000, 1400, 1200, 1500, 1800, 1900, 2000];
-        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        data = [2000, 1400, 1200, 1500, 1800, 1900, 2000, 2900,1200,3400,2400, 2300];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
         renderChart(data, labels);
         console.log("after renderchart");
-        document.getElementById('condom').innerHTML="Application consumption per day";
+        document.getElementById('condo').innerHTML="Application consumption per day";
     }
 );
-
+$("#overAll").click(
+    function () {
+        console.log("function start");
+        data = [2000, 1400, 1200, 1500, 1800, 1900, 2000,1000,2000,3000,4000,5000,6000,7000];
+        labels =  ["jan", "feb", "march", "april", "may", "june", "july", "august", "october", "november", "december"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+        document.getElementById('condo').innerHTML="Application consumption per day";
+    }
+);
 </script>
