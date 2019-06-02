@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">CHARTS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,51 +7,127 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#Acpd" id="Acpd">Appliances consumption per day <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Consumption of individual appliance
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#wm" id="rendeBtn">Washing Machine</a>
+                    <a class="dropdown-item" href="#mw" id="microPenis">Microwave</a>
+                    <a class="dropdown-item" href="#ec" id="elecDick">Electirc Ketle</a>
+                    <a class="dropdown-item" href="#ac" id="coolDildo">Air Conditioner</a>
+                    <a class="dropdown-item" href="#ht" id="hotDildo">Heater</a>
+                    <a class="dropdown-item" href="#is" id="burningHouse">Induction Stove</a>
                 </div>
             </li>
         </ul>
     </div>
+
 </nav>
 
-<script>
-    function renderChart(data, labels) {
-            var ctx = document.getElementById("myChart").getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'This week',
-                        data: data,
-                    }]
-                },
-            });
-        }
 
-        $("#renderBtn").click(
-        function () {
-            console.log("function start");
-            data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
-            labels = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-            renderChart(data, labels);
-            console.log("after renderchart");
-        }
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+<script>
+function float2dollar(value){
+    return "U$ "+(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+function renderChart(data, labels) {
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'This week',
+                data: data,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            }]
+        },
+        options: {            
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function(value, index, values) {
+                            return float2dollar(value);
+                        }
+                    }
+                }]                
+            }
+        },
+    });
+}
+$("#rendeBtn").click(
+    function () {
+        console.log("function start");
+        data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
+        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
 );
+$("#microPenis").click(
+    function () {
+        console.log("function start");
+        data = [2000, 14000, 12000, 15000, 18000, 19000, 22000];
+        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "jan"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+$("#hotDildo").click(
+    function () {
+        console.log("function start");
+        data = [20000, 1400, 12000, 15000, 18000, 19000, 22000];
+        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "feb", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+$("#coolDildo").click(
+    function () {
+        console.log("function start");
+        data = [20000, 14000, 1200, 15000, 18000, 19000, 22000];
+        labels =  ["sunday", "monday", "tuesday", "wednesday", "march", "friday", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+$("#burningHouse").click(
+    function () {
+        console.log("function start");
+        data = [20000, 14000, 12000, 1500, 18000, 19000, 22000];
+        labels =  ["sunday", "monday", "tuesday", "april", "thursday", "friday", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+$("#elecDick").click(
+    function () {
+        console.log("function start");
+        data = [20000, 14000, 12000, 15000, 1800, 19000, 22000];
+        labels =  ["sunday", "monday", "may", "wednesday", "thursday", "friday", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+$("#Acpd").click(
+    function () {
+        console.log("function start");
+        data = [2000, 1400, 1200, 1500, 1800, 1900, 2000];
+        labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        renderChart(data, labels);
+        console.log("after renderchart");
+    }
+);
+
 </script>
