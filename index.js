@@ -7,6 +7,8 @@ const routes = require('./routes');
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 app.engine('hbs', hbs({
     extname: 'hbs', 
     defaultLayout: 'layout', 

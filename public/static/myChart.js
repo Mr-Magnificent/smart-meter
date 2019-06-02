@@ -13,7 +13,6 @@ function renderChart(data, labels) {
 }
 
 $("#renderBtn").click(
-    console.log("clicked");
     function () {
         console.log("function start");
         data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
